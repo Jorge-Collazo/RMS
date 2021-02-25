@@ -14,14 +14,14 @@ body{
     position: absolute;
     transform: translate(-50%, -50%);
     box-sizing: border-box;
+    padding: 70px 30px;
 }
 .logo{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+    width: 160px;
+    height: 80px;
     position: absolute;
     top: -50px;
-    left: calc(50% - 50px);
+    left: calc(50% - 70px);
 }
 h1{
     margin: 0;
@@ -51,11 +51,13 @@ h1{
     border: none;
     outline: none;
     height: 40px;
-    background: #fb2525;
+    background: #F7931D;
     color: #fff;
     font-size: 18px;
     border-radius: 20px;
 }
 .loginbox input[type="submit"]:hover{
-    
+    cursor: pointer;
+    background: #ffc107;
+    color: #000;
 }
