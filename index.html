@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>RMS</title>
     <link href="index.css" rel="stylesheet" type="text/css">
-    
+    <script src="server.js"></script>
 </head>
 <body>
     <div class="loginbox">
@@ -14,10 +14,10 @@
         <h1>Login here</h1>
         <form>
             <p>Username</p>
-            <input type="text" name="" placeholder="Enter Username">
+            <input type="text" name="username" id="username" placeholder="Enter Username" onkeydown="handleEnter(event)">
             <p>Password</p>
-            <input type="text" name="" placeholder="Enter Password">
-            <input type="submit" name="" value="login">
+            <input type="password" name="password" id="password" class="validate" placeholder="Enter Password" onkeydown="handleEnter(event)">
+            <input type="button" name="" value="login" onclick="validate()">
         </form>
     </div>
 </body>
