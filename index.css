@@ -2,14 +2,14 @@ body{
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    background: url(lawandpublic.png);
+    background: url(public/images/lawandpublic.png);
     background-size: cover;
-    background-position: center;
+    
 }   
 .loginbox{
     width: 320px;
     height: 420px;
-    background: #000;
+    background-color: rgba(0, 0, 0, .85);
     color: #fff;
     top: 50%;
     left: 50%;
@@ -20,7 +20,7 @@ body{
 }
 .logo{
     width: 160px;
-    height: 80px;
+    height: 65px;
     position: absolute;
     top: -50px;
     left: calc(50% - 70px);
