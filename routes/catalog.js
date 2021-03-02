@@ -4,7 +4,7 @@ var router = express.Router();
 // Require controller modules.
 var incident_controller = require('../controllers/incidentController');
 var people_controller = require('../controllers/peopleController');
-var vehicle_controller = require('../controllers/vhicleController');
+var vehicle_controller = require('../controllers/vehicleController');
 
 /// incident ROUTES ///
 
@@ -61,30 +61,30 @@ router.get('/people/:id', people_controller.people_detail);
 // GET request for list of all peoples.
 router.get('/peoples', people_controller.people_list);
 
-/// vhicle ROUTES ///
+/// vehicle ROUTES ///
 
-// GET request for creating a vhicle. NOTE This must come before route that displays vhicle (uses id).
-router.get('/vhicle/create', vehicle_controller.vehicle_create_get);
+// GET request for creating a vehicle. NOTE This must come before route that displays vehicle (uses id).
+router.get('/vehicle/create', vehicle_controller.vehicle_create_get);
 
-//POST request for creating vhicle.
-router.post('/vhicle/create', vehicle_controller.vehicle_create_post);
+//POST request for creating vehicle.
+router.post('/vehicle/create', vehicle_controller.vehicle_create_post);
 
-// GET request to delete vhicle.
-router.get('/vhicle/:id/delete', vehicle_controller.vehicle_delete_get);
+// GET request to delete vehicle.
+router.get('/vehicle/:id/delete', vehicle_controller.vehicle_delete_get);
 
-// POST request to delete vhicle.
-router.post('/vhicle/:id/delete', vehicle_controller.vehicle_delete_post);
+// POST request to delete vehicle.
+router.post('/vehicle/:id/delete', vehicle_controller.vehicle_delete_post);
 
-// GET request to update vhicle.
-router.get('/vhicle/:id/update', vehicle_controller.vehicle_update_get);
+// GET request to update vehicle.
+router.get('/vehicle/:id/update', vehicle_controller.vehicle_update_get);
 
-// POST request to update vhicle.
-router.post('/vhicle/:id/update', vehicle_controller.vehicle_update_post);
+// POST request to update vehicle.
+router.post('/vehicle/:id/update', vehicle_controller.vehicle_update_post);
 
-// GET request for one vhicle.
-router.get('/vhicle/:id', vehicle_controller.vehicle_detail);
+// GET request for one vehicle.
+router.get('/vehicle/:id', vehicle_controller.vehicle_detail);
 
-// GET request for list of all vhicle.
-router.get('/vhicles', vehicle_controller.vehicle_list);
+// GET request for list of all vehicle.
+router.get('/vehicles', vehicle_controller.vehicle_list);
 
 module.exports = router;
