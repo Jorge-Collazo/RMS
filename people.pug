@@ -1,0 +1,262 @@
+doctype html
+html(lang='en') 
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible' content='ie=edge')
+    title Document
+    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl' crossorigin='anonymous')
+  body
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light
+      .container-fluid
+        a.navbar-brand(href='index.html')
+          img(src='public/images/Law Public Safety_orange.png' height='56px' width='150px')
+        button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarSupportedContent.collapse.navbar-collapse
+          ul.navbar-nav.me-auto.mb-2.mb-lg-0
+            li.nav-item
+              a.nav-link.active(aria-current='page' href='incidentlist.html') Incident
+            li.nav-item
+              a.nav-link.active(aria-current='page' href='peoplelist.html') People
+            li.nav-item
+              a.nav-link.active(aria-current='page' href='vehiclelist.html') Vehicle
+            li.nav-item
+              a.nav-link.active(aria-current='page' href='select.html') Select
+          form.d-flex
+            input.form-control.me-2(type='search' placeholder='Search' aria-label='Search')
+            button.btn.btn-outline-success(type='submit') Search
+    br
+    .mx-auto(style='width: 80%;')
+      .card.text-center
+        h2.card-header.mx-auto(style='width: 100%;') People
+        .row.g-2.m-3
+          .col-md.me-3
+            .input-group.mb-3
+              span#inputGroup-sizing-default.input-group-text First Name
+              input.form-control(type='text' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-default')
+            .input-group.mb-3
+              span#inputGroup-sizing-default.input-group-text Middle Initial(optional)
+              input.form-control(type='text' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-default')
+            .input-group.mb-3
+              span#inputGroup-sizing-default.input-group-text Last Name
+              input.form-control(type='text' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-default')
+            .input-group.mb-3
+              span#inputGroup-sizing-default.input-group-text Social Security Number
+              input.form-control(type='text' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-default')
+            .input-group.mb-3
+              span#inputGroup-sizing-default.input-group-text Age
+              input.form-control(type='text' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-default')
+            .input-group.mb-3
+              span#inputGroup-sizing-default.input-group-text Date of Birth
+              input.form-control(type='date' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-default' min='1900-01-01' max='2021-12-31')
+            .input-group.mb-3
+              span#inputGroup-sizing-default.input-group-text Phone Number
+              input.form-control(type='text' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-default')
+            .input-group.mb-3
+              span#inputGroup-sizing-default.input-group-text Home Address
+              input.form-control(type='text' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-default')
+            .input-group.mb-3
+              span#inputGroup-sizing-default.input-group-text Weight
+              input.form-control(type='text' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-default')
+            .input-group.mb-3
+              span#inputGroup-sizing-default.input-group-text Height
+              input.form-control(type='text' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-default')
+            .input-group.mb-3
+              label.input-group-text(for='inputGroupSelect01') Eye Color
+              select#inputGroupSelect01.form-select
+                option(selected) UNK
+                option(value='1') BRO
+                option(value='2') GRN
+                option(value='3') BLU
+                option(value='4') DBL
+                option(value='5') LBL
+            .input-group.mb-3
+              label.input-group-text(for='inputGroupSelect01') Race
+              select#inputGroupSelect01.form-select
+                option(selected) U
+                option(value='1') W
+                option(value='2') B
+                option(value='3') H
+                option(value='4') I
+                option(value='5') A
+            .input-group.mb-3
+              label.input-group-text(for='inputGroupSelect01') Hair Color
+              select#inputGroupSelect01.form-select
+                option(selected) UNK
+                option(value='1') BGE
+                option(value='2') BLK
+                option(value='3') BLU
+                option(value='4') DBL
+                option(value='5') LBL
+                option(value='6') BRZ
+                option(value='7') BRO
+                option(value='8') GLD
+                option(value='9') GRY
+                option(value='10') GRN
+                option(value='11') MAR
+                option(value='12') ORG
+                option(value='13') PNK
+                option(value='14') PLE
+                option(value='15') RED
+                option(value='16') SIL
+                option(value='17') TAN
+                option(value='18') TRQ
+                option(value='19') WHI
+                option(value='20') YEL
+                option(value='21') TEA
+                option(value='22') BLN
+                option(value='23') HAZ
+                option(value='24') BLD
+            .input-group.mb-3
+              label.input-group-text(for='inputGroupSelect01') Gender
+              select#inputGroupSelect01.form-select
+                option(selected) Unkown
+                option(value='1') Male
+                option(value='2') Female
+            .form-floating.mb-3
+              textarea#floatingTextarea.form-control.overflow-auto(placeholder='Leave a comment here' style='height: 300px; min-height: 300px; max-height: 300px;')
+              label(for='floatingTextarea') Additional Information
+            .input-group.mb-3
+              label.input-group-text(for='inputGroupFile01') Upload
+              input#inputGroupFile01.form-control(type='file')
+          .col-md.ms-3
+            .row.g-2
+              .col-md
+                label.form-label(for='formGroupExampleInput') Code
+                .form-check
+                  input#defaultCheck1.form-check-input(type='checkbox' value='')
+                  label.form-check-label(for='defaultCheck1')
+                    | RP
+                .form-check
+                  input#defaultCheck1.form-check-input(type='checkbox' value='')
+                  label.form-check-label(for='defaultCheck1')
+                    | W
+                .form-check
+                  input#defaultCheck1.form-check-input(type='checkbox' value='')
+                  label.form-check-label(for='defaultCheck1')
+                    | V
+                .form-check
+                  input#defaultCheck1.form-check-input(type='checkbox' value='')
+                  label.form-check-label(for='defaultCheck1')
+                    | IL
+                .form-check
+                  input#defaultCheck1.form-check-input(type='checkbox' value='')
+                  label.form-check-label(for='defaultCheck1')
+                    | S
+              .col-md
+                .form-check.form-switch
+                  input#flexSwitchCheckDefault.form-check-input(type='checkbox')
+                  label.form-check-label(for='flexSwitchCheckDefault') Gang affiliation
+                .form-check.form-switch
+                  input#flexSwitchCheckDefault.form-check-input(type='checkbox')
+                  label.form-check-label(for='flexSwitchCheckDefault') Hazard
+                .form-floating
+                  textarea#floatingTextarea2.form-control.overflow-auto(placeholder='Leave a comment here' style='height: 150px; min-height: 150px; max-height: 150px;')
+                  label(for='floatingTextarea2') Hazard Information
+            br
+            .input-group.mb-3
+              span#inputGroup-sizing-default.input-group-text License Number
+              input.form-control(type='text' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-default')
+            .input-group.mb-3
+              span#inputGroup-sizing-default.input-group-text License Date
+              input.form-control(type='date' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-default' min='1900-01-01' max='2021-12-31')
+            .input-group.mb-3
+              span#inputGroup-sizing-default.input-group-text License State
+              input.form-control(type='text' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-default')
+            br
+            table.table.table-striped.table-hover.border.border-dark
+              thead
+                tr
+                  th(scope='col') Registered Vehicles
+              tbody
+                tr
+                  th(scope='row')
+                    input.form-control.bg-transparent(type='text' placeholder='' aria-label='First name')
+                tr
+                  th(scope='row')
+                    input.form-control.bg-transparent(type='text' placeholder='' aria-label='First name')
+                tr
+                  th(scope='row')
+                    input.form-control.bg-transparent(type='text' placeholder='' aria-label='First name')
+                tr
+                  th(scope='row')
+                    input.form-control.bg-transparent(type='text' placeholder='' aria-label='First name')
+            table.table.table-striped.table-hover.border.border-dark
+              thead
+                tr
+                  th(scope='col') Previous Vehicles
+              tbody
+                tr
+                  th(scope='row')
+                    input.form-control.bg-transparent(type='text' placeholder='' aria-label='First name')
+                tr
+                  th(scope='row')
+                    input.form-control.bg-transparent(type='text' placeholder='' aria-label='First name')
+                tr
+                  th(scope='row')
+                    input.form-control.bg-transparent(type='text' placeholder='' aria-label='First name')
+                tr
+                  th(scope='row')
+                    input.form-control.bg-transparent(type='text' placeholder='' aria-label='First name')
+            table.table.table-striped.table-hover.border.border-dark
+              thead
+                tr
+                  th(scope='col') I.R.#
+                  th(scope='col') Type
+                  th(scope='col') Date
+              tbody
+                tr
+                  th(scope='row')
+                    input.form-control.bg-transparent(type='text' placeholder='' aria-label='First name')
+                  td
+                    input.form-control.bg-transparent(type='text' placeholder='' aria-label='First name')
+                  td
+                    input.form-control.bg-transparent(type='text' placeholder='' aria-label='First name')
+                tr
+                  th(scope='row')
+                    input.form-control.bg-transparent(type='text' placeholder='' aria-label='First name')
+                  td
+                    input.form-control.bg-transparent(type='text' placeholder='' aria-label='First name')
+                  td
+                    input.form-control.bg-transparent(type='text' placeholder='' aria-label='First name')
+                tr
+                  th(scope='row')
+                    input.form-control.bg-transparent(type='text' placeholder='' aria-label='First name')
+                  td
+                    input.form-control.bg-transparent(type='text' placeholder='' aria-label='First name')
+                  td
+                    input.form-control.bg-transparent(type='text' placeholder='' aria-label='First name')
+                tr
+                  th(scope='row')
+                    input.form-control.bg-transparent(type='text' placeholder='' aria-label='First name')
+                  td
+                    input.form-control.bg-transparent(type='text' placeholder='' aria-label='First name')
+                  td
+                    input.form-control.bg-transparent(type='text' placeholder='' aria-label='First name')
+                tr
+                  th(scope='row')
+                    input.form-control.bg-transparent(type='text' placeholder='' aria-label='First name')
+                  td
+                    input.form-control.bg-transparent(type='text' placeholder='' aria-label='First name')
+                  td
+                    input.form-control.bg-transparent(type='text' placeholder='' aria-label='First name')
+                tr
+                  th(scope='row')
+                    input.form-control.bg-transparent(type='text' placeholder='' aria-label='First name')
+                  td
+                    input.form-control.bg-transparent(type='text' placeholder='' aria-label='First name')
+                  td
+                    input.form-control.bg-transparent(type='text' placeholder='' aria-label='First name')
+          .row.g-2.mb-2.ml-2
+            div
+              button.btn.btn-primary.btn-lg.col-md.ms-3.mx-3(type='submit' style='background-color: #F7931D;') Submit
+    script.
+      function addDarkmodeWidget() {
+      new Darkmode().showWidget();
+      }
+      window.addEventListener('load', addDarkmodeWidget);
+    script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js' integrity='sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0' crossorigin='anonymous')
+    script(src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js' integrity='sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi' crossorigin='anonymous')
+    script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js' integrity='sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG' crossorigin='anonymous')
+    script(src='https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js')

@@ -1,0 +1,213 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible' content='ie=edge')
+    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl' crossorigin='anonymous')
+    title Document
+  body
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light
+      .container-fluid
+        a.navbar-brand(href='index.html')
+          img(src='public/images/Law Public Safety_orange.png' height='56px' width='150px')
+        button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarSupportedContent.collapse.navbar-collapse
+          ul.navbar-nav.me-auto.mb-2.mb-lg-0
+            li.nav-item
+              a.nav-link.active(aria-current='page' href='incidentlist.html') Incident
+            li.nav-item
+              a.nav-link.active(aria-current='page' href='peoplelist.html') People
+            li.nav-item
+              a.nav-link.active(aria-current='page' href='vehiclelist.html') Vehicle
+            li.nav-item
+              a.nav-link.active(aria-current='page' href='select.html') Select
+          form.d-flex
+            input.form-control.me-2(type='search' placeholder='Search' aria-label='Search')
+            button.btn.btn-outline-success(type='submit') Search
+    br
+    .card.text-center.mx-auto(style='width: 80%;')
+      .card-header
+        h1(style='text-align: center;') Vehicles
+      .card-body
+        .row
+          .col
+            .input-group.mb-3
+              span#basic-addon1.input-group-text License Plate Number
+              input#plate.form-control(type='text' aria-label='plate' aria-describedby='basic-addon1')
+          // <div class="col"><p><label>License Plate Number</label><input type="text" id="plate" style="margin-left: 3%;"></p></div>
+          // <div class="col"><p><label>Year</label><input type="text" id="year"></p></div>
+          .col
+            .input-group.mb-3
+              span#basic-addon1.input-group-text Year
+              input#year.form-control(type='text' aria-label='year' aria-describedby='basic-addon1')
+        .row
+          .col
+            .input-group.mb-3
+              span#basic-addon1.input-group-text Vehicle Id Number
+              input#VIN.form-control(type='text' aria-label='VIN' aria-describedby='basic-addon1')
+          .col
+            .input-group.mb-3
+              span#basic-addon1.input-group-text Make
+              input#Make.form-control(type='text' aria-label='Make' aria-describedby='basic-addon1')
+        .row
+          .col
+            table.table.table-striped.table-hover
+              thead
+                tr
+                  th(scope='col') I.R #:
+                  th(scope='col') Type:
+                  th(scope='col') Date:
+              tbody
+                tr
+                  td
+                    input.bg-transparent(type='text')
+                  td
+                    input.bg-transparent(type='text')
+                  td
+                    input.bg-transparent(type='text')
+                tr
+                  td
+                    input(type='text')
+                  td
+                    input(type='text')
+                  td
+                    input(type='text')
+                tr
+                  td
+                    input.bg-transparent(type='text')
+                  td
+                    input.bg-transparent(type='text')
+                  td
+                    input.bg-transparent(type='text')
+                tr
+                  td
+                    input(type='text')
+                  td
+                    input(type='text')
+                  td
+                    input(type='text')
+                tr
+                  td
+                    input.bg-transparent(type='text')
+                  td
+                    input.bg-transparent(type='text')
+                  td
+                    input.bg-transparent(type='text')
+                tr
+                  td
+                    input(type='text')
+                  td
+                    input(type='text')
+                  td
+                    input(type='text')
+                tr
+                  td
+                    input.bg-transparent(type='text')
+                  td
+                    input.bg-transparent(type='text')
+                  td
+                    input.bg-transparent(type='text')
+                tr
+                  td
+                    input(type='text')
+                  td
+                    input(type='text')
+                  td
+                    input(type='text')
+                tr
+                  td
+                    input.bg-transparent(type='text')
+                  td
+                    input.bg-transparent(type='text')
+                  td
+                    input.bg-transparent(type='text')
+            table.table.table-striped.table-hover
+              thead
+                tr
+                  th(scope='col') Incidents Involved
+              tbody
+                tr
+                  td
+                    input.bg-transparent(type='text')
+                tr
+                  td
+                    input(type='text')
+                tr
+                  td
+                    input.bg-transparent(type='text')
+                tr
+                  td
+                    input(type='text')
+                tr
+                  td
+                    input.bg-transparent(type='text')
+                tr
+                  td
+                    input(type='text')
+                tr
+                  td
+                    input.bg-transparent(type='text')
+                tr
+                  td
+                    input(type='text')
+                tr
+                  td
+                    input.bg-transparent(type='text')
+          .col
+            .input-group.mb-3
+              span#basic-addon1.input-group-text Model
+              input#model.form-control(type='text' aria-label='model' aria-describedby='basic-addon1')
+            .input-group.mb-3
+              span#basic-addon1.input-group-text Color
+              input#color.form-control(type='text' aria-label='color' aria-describedby='basic-addon1')
+            .input-group.mb-3
+              span#basic-addon1.input-group-text Value
+              input#value.form-control(type='text' aria-label='value' aria-describedby='basic-addon1')
+            table.table.table-striped.table-hover
+              thead
+                tr
+                  th(scope='col') Registered Owner
+              tbody
+                tr
+                  td
+                    input.bg-transparent(type='text')
+            table.table.table-striped.table-hover
+              thead
+                tr
+                  th(scope='col') Previous owners
+              tbody
+                tr
+                  td
+                    input.bg-transparent(type='text')
+                tr
+                  td
+                    input(type='text')
+                tr
+                  td
+                    input.bg-transparent(type='text')
+                tr
+                  td
+                    input(type='text')
+                tr
+                  td
+                    input.bg-transparent(type='text')
+                tr
+                  td
+                    input(type='text')
+                tr
+                  td
+                    input.bg-transparent(type='text')
+                tr
+                  td
+                    input(type='text')
+                tr
+                  td
+                    input.bg-transparent(type='text')
+            .col-25
+              label(for='addinfo') Additional information
+            .col-75
+              textarea#addinfo(name='addinfo' placeholder='Write additional information...' style='height: 200px; width: 500px; max-block-size: 200px; min-height: 200px;')
+      .row
+        a.btn.btn-primary(href='#') Submit
