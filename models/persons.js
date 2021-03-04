@@ -52,13 +52,12 @@ var PeopleSchema = new Schema(
 
         registered_vehicle: {type: Schema.Types.ObjectId, ref: 'vehicle', required: false},
 
-        previous_vhicles: {type: Schema.Types.ObjectId, ref: 'vehicle', required: false},
+        previous_vhicles: {type: Schema.Types.ObjectId, ref: 'vehicle', required: false,},
 
         incident_report_number: {type: Schema.Types.ObjectId, ref: 'incident', required: true},
 
         incident_type: {type: Schema.Types.ObjectId, ref: 'incident', required: true},
 
         incident_date: {type: Schema.Types.ObjectId, ref: 'incident', required: true},
-
     }
 );
