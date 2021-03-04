@@ -24,32 +24,36 @@ var IncidentSchema = new Schema(
 
         report_time: {type: String, required: true,  maxlength:7, minlength:7},
 
-        code: {type: Boolean, required: true,},
+        people_involved: {type: Schema.Types.ObjectId, ref: 'people', required: false,},
 
-        incident_type: {type: String, required: true,},
+        code: {type: Boolean, required: true},
 
-        location: {type: String, required: true,},
+        vehicle: {type: Schema.Types.ObjectId, ref: 'vehicle', required: false},
 
-        license_number: {type: Number, required: true,},
+        incident_type: {type: String, required: true, maxlength:50},
 
-        license_state: {type: String, required: true,},
+        location: {type: String, required: true, maxlength:100},
 
-        license_date: {type: Date, required: true,},
+        license_number: {type: Number, required: true, maxlength:11},
 
-        license_plate_number: {type: Number, required: true,},
+        license_state: {type: String, required: true, maxlength:2, enum: ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD','TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY',], default: 'AL'},
 
-        officer_serial_number: {type: Number, required: true,},
+        license_date: {type: Date, required: true},
 
-        value: {type: Number, required: false,},
+        license_plate_number: {type: String, required: true, maxlength:7, minlength:7},
 
-        serial_number: {type: Number, required: true,},
+        officer_serial_number: {type: Number, required: true, maxlength:5, minlength:5},
 
-        gang_affiliation: {type: Boolean, required: false,},
+        value: {type: Number, required: false},
 
-        hazard: {type: Boolean, required: false,},
+        serial_number: {type: Number, required: true, maxlength:10, minlength:10},
 
-        hazard_information: {type: String, required: false,},
+        gang_affiliation: {type: Boolean, required: false},
 
-        narriative: {type: String, required: true,},
+        hazard: {type: Boolean, required: false},
+
+        hazard_information: {type: String, required: false},
+
+        narriative: {type: String, required: true},
     }
 );
