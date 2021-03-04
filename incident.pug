@@ -371,11 +371,46 @@ html(lang='en')
             .form-floating
               textarea#floatingTextarea2.form-control.overflow-auto(placeholder='Leave a comment here' style='height: 320px; min-height: 150px; max-height: 320px;')
               label(for='floatingTextarea2') Hazard Information
+        // This shows all the vehicles that are involved in the incident
         .row
-          .col-25
-            label(for='Narriative') Narriative
-          .col-75
-            textarea#addinfo(name='Narriative' placeholder='Write information...' style='height: 200px; width: 1000px; max-block-size: 200px; min-height: 200px;')
-      .row
-        div
-          a.btn.btn-primary(href='#' style='background-color: #F7931D;') Submit
+          .col
+            table.table.table-striped.table-hover
+              thead
+                tr
+                  th(scope='col') Vehicles Involved
+              tbody
+                tr
+                  td
+                    input.bg-transparent(type='text')
+                tr
+                  td
+                    input(type='text')
+                tr
+                  td
+                    input.bg-transparent(type='text')
+                tr
+                  td
+                    input(type='text')
+                tr
+                  td
+                    input.bg-transparent(type='text')
+                tr
+                  td
+                    input(type='text')
+                tr
+                  td
+                    input.bg-transparent(type='text')
+                tr
+                  td
+                    input(type='text')
+                tr
+                  td
+                    input.bg-transparent(type='text')
+          .col
+            .col-25
+              label(for='Narriative') Narriative
+            .col-75
+              textarea#addinfo(name='Narriative' placeholder='Write information...' style='height: 440px; width: 550px; min-height: 200px; max-height: 440px;')
+        .row
+          div
+            a.btn.btn-primary(href='#' style='background-color: #F7931D;') Submit
