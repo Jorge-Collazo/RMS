@@ -123,45 +123,41 @@ html(lang='en')
                     input.bg-transparent(type='text')
                   td
                     input.bg-transparent(type='text')
-            table.table.table-striped.table-hover
-              thead
-                tr
-                  th(scope='col') Incidents Involved
-              tbody
-                tr
-                  td
-                    input.bg-transparent(type='text')
-                tr
-                  td
-                    input(type='text')
-                tr
-                  td
-                    input.bg-transparent(type='text')
-                tr
-                  td
-                    input(type='text')
-                tr
-                  td
-                    input.bg-transparent(type='text')
-                tr
-                  td
-                    input(type='text')
-                tr
-                  td
-                    input.bg-transparent(type='text')
-                tr
-                  td
-                    input(type='text')
-                tr
-                  td
-                    input.bg-transparent(type='text')
+            .col
+              label(for='addinfo') Additional information
+              textarea#addinfo(name='addinfo' placeholder='Write additional information...' style='height: 200px; width: 500px; max-block-size: 200px; min-height: 200px;')
           .col
             .input-group.mb-3
               span#basic-addon1.input-group-text Model
               input#model.form-control(type='text' aria-label='model' aria-describedby='basic-addon1')
             .input-group.mb-3
-              span#basic-addon1.input-group-text Color
-              input#color.form-control(type='text' aria-label='color' aria-describedby='basic-addon1')
+              label.input-group-text(for='inputGroupSelect01') Color
+              select#inputGroupSelect01.form-select
+                option(selected) UNK
+                option(value='1') BGE
+                option(value='2') BLK
+                option(value='3') BLU
+                option(value='4') DBL
+                option(value='5') LBL
+                option(value='6') BRZ
+                option(value='7') BRO
+                option(value='8') GLD
+                option(value='9') GRY
+                option(value='10') GRN
+                option(value='11') MAR
+                option(value='12') ORG
+                option(value='13') PNK
+                option(value='14') PLE
+                option(value='15') RED
+                option(value='16') SIL
+                option(value='17') TAN
+                option(value='18') TRQ
+                option(value='19') WHI
+                option(value='20') YEL
+                option(value='21') TEA
+                option(value='22') BLN
+                option(value='23') HAZ
+                option(value='24') BLD
             .input-group.mb-3
               span#basic-addon1.input-group-text Value
               input#value.form-control(type='text' aria-label='value' aria-describedby='basic-addon1')
@@ -173,41 +169,40 @@ html(lang='en')
                 tr
                   td
                     input.bg-transparent(type='text')
-            table.table.table-striped.table-hover
-              thead
-                tr
-                  th(scope='col') Previous owners
-              tbody
-                tr
-                  td
-                    input.bg-transparent(type='text')
-                tr
-                  td
-                    input(type='text')
-                tr
-                  td
-                    input.bg-transparent(type='text')
-                tr
-                  td
-                    input(type='text')
-                tr
-                  td
-                    input.bg-transparent(type='text')
-                tr
-                  td
-                    input(type='text')
-                tr
-                  td
-                    input.bg-transparent(type='text')
-                tr
-                  td
-                    input(type='text')
-                tr
-                  td
-                    input.bg-transparent(type='text')
-            .col-25
-              label(for='addinfo') Additional information
-            .col-75
-              textarea#addinfo(name='addinfo' placeholder='Write additional information...' style='height: 200px; width: 500px; max-block-size: 200px; min-height: 200px;')
-      .row
-        a.btn.btn-primary(href='#') Submit
+            .row
+              .col
+                table.table.table-striped.table-hover
+                  thead
+                    tr
+                      th(scope='col') Previous owners
+                  tbody
+                    tr
+                      td
+                        input.bg-transparent(type='text')
+                    tr
+                      td
+                        input(type='text')
+                    tr
+                      td
+                        input.bg-transparent(type='text')
+                    tr
+                      td
+                        input(type='text')
+                    tr
+                      td
+                        input.bg-transparent(type='text')
+                    tr
+                      td
+                        input(type='text')
+                    tr
+                      td
+                        input.bg-transparent(type='text')
+                    tr
+                      td
+                        input(type='text')
+                    tr
+                      td
+                        input.bg-transparent(type='text')
+        .row
+          div
+            a.btn.btn-primary(href='#' style='background-color: #F7931D;') Submit
