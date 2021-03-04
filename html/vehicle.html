@@ -116,49 +116,45 @@
                                 
                                 </tbody>
                     </table>
-                    <table class="table table-striped table-hover">
-                        <thead>
-                                <tr>
-                                    <th scope="col">Incidents Involved</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td><input type="text" class="bg-transparent"></td>
-                                </tr>
-                                <tr>
-                                    <td><input type="text"></td>
-                                </tr>
-                                <tr>
-                                    <td><input type="text" class="bg-transparent"></td>
-                                </tr>
-                                <tr>
-                                    <td><input type="text"></td>
-                                </tr>
-                                <tr>
-                                    <td><input type="text" class="bg-transparent"></td>
-                                </tr>
-                                <tr>
-                                    <td><input type="text"></td>
-                                </tr>
-                                <tr>
-                                    <td><input type="text" class="bg-transparent"></td>
-                                </tr>
-                                <tr>
-                                    <td><input type="text"></td>
-                                </tr>
-                                <tr>
-                                    <td><input type="text" class="bg-transparent"></td>
-                                </tr>
-                                
-                                </tbody>
-                    </table>
+
+                    <div class="col">
+                            <label for="addinfo">Additional information</label>
+                            <textarea id="addinfo" name="addinfo" placeholder="Write additional information..." style="height: 200px; width: 500px; max-block-size: 200px; min-height: 200px;"></textarea>
+                    </div> 
                 </div>
                 <div class="col"><div class="input-group mb-3"><span class="input-group-text" id="basic-addon1">Model</span>
                     <input type="text" class="form-control" aria-label="model" id="model" aria-describedby="basic-addon1"></div>
 
-                <div class="input-group mb-3"><span class="input-group-text" id="basic-addon1">Color</span>
-                        <input type="text" class="form-control" aria-label="color" id="color" aria-describedby="basic-addon1"></div>
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="inputGroupSelect01">Color</label>
+                    <select class="form-select" id="inputGroupSelect01">
+                      <option selected>UNK</option>
+                      <option value="1">BGE</option>
+                      <option value="2">BLK</option>
+                      <option value="3">BLU</option>
+                      <option value="4">DBL</option>
+                      <option value="5">LBL</option>
+                      <option value="6">BRZ</option>
+                      <option value="7">BRO</option>
+                      <option value="8">GLD</option>
+                      <option value="9">GRY</option>
+                      <option value="10">GRN</option>
+                      <option value="11">MAR</option>
+                      <option value="12">ORG</option>
+                      <option value="13">PNK</option>
+                      <option value="14">PLE</option>
+                      <option value="15">RED</option>
+                      <option value="16">SIL</option>
+                      <option value="17">TAN</option>
+                      <option value="18">TRQ</option>
+                      <option value="19">WHI</option>
+                      <option value="20">YEL</option>
+                      <option value="21">TEA</option>
+                      <option value="22">BLN</option>
+                      <option value="23">HAZ</option>
+                      <option value="24">BLD</option>
+                    </select>
+                </div>
                     
                     <div class="input-group mb-3"><span class="input-group-text" id="basic-addon1">Value</span>
                         <input type="text" class="form-control" aria-label="value" id="value" aria-describedby="basic-addon1"></div>
@@ -176,46 +172,47 @@
                                     </tbody>
 
                     </table>
-                    <table class="table table-striped table-hover">
-                        <thead>
-                                <tr>
-                                    <th scope="col">Previous owners</th>
-                                </tr>
+                    <div class="row">
+                        <div class="col">
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Previous owners</th>
+                                    </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td><input type="text" class="bg-transparent"></td>
-                                </tr>
-                                <tr>
-                                    <td><input type="text"></td>
-                                </tr>
-                                <tr>
-                                    <td><input type="text" class="bg-transparent"></td>
-                                </tr>
-                                <tr>
-                                    <td><input type="text"></td>
-                                </tr>
-                                <tr>
-                                    <td><input type="text" class="bg-transparent"></td>
-                                </tr>
-                                <tr>
-                                    <td><input type="text"></td>
-                                </tr>
-                                <tr>
-                                    <td><input type="text" class="bg-transparent"></td>
-                                </tr>
-                                <tr>
-                                    <td><input type="text"></td>
-                                </tr>
-                                <tr>
-                                    <td><input type="text" class="bg-transparent"></td>
-                                </tr>
-                                
+                                    <tr>
+                                        <td><input type="text" class="bg-transparent"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="bg-transparent"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="bg-transparent"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="bg-transparent"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="bg-transparent"></td>
+                                    </tr>
                                 </tbody>
-                    </table>
-                    <div class="col-25"><label for="addinfo">Additional information</label></div>
-                <div class="col-75"><textarea id="addinfo" name="addinfo" placeholder="Write additional information..." style="height: 200px; width: 500px; max-block-size: 200px; min-height: 200px;"></textarea></div>
-                </div></div>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="row">
                 <div>
