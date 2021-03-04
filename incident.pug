@@ -1,5 +1,5 @@
 doctype html
-html(lang='en') 
+html(lang='en')
   head
     meta(charset='UTF-8')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
@@ -37,7 +37,7 @@ html(lang='en')
               span#basic-addon1.input-group-text Occurence Time
               input#Occtime.form-control(type='text' aria-label='Occurence Time' aria-describedby='basic-addon1')
           // <div class="col"><p><label>License Plate Number</label><input type="text" id="plate" style="margin-left: 3%;"></p></div>
-          // <div class="col"><p><label>Year</label><input type="text" id="year"></p></div>
+          // Can select which type of incident type
           .col
             .input-group.mb-3
               label.input-group-text(for='inputGroupSelect01') Incident Type
@@ -86,6 +86,7 @@ html(lang='en')
             .input-group.mb-3
               span#basic-addon1.input-group-text Social Security Number
               input#ssn.form-control(type='text' placeholder='XXX-XX-XXXX' aria-label='Social Security' aria-describedby='basic-addon1')
+          // Allows you to select which state the license is from
           .col
             .input-group.mb-3
               label.input-group-text(for='inputGroupSelect01') License State
@@ -222,8 +223,8 @@ html(lang='en')
         .row
           .col
             .input-group.mb-3
-              span#basic-addon1.input-group-text Report Date & Time
-              input#Reportdate&time.form-control(type='text' aria-label='Report Date & Time' aria-describedby='basic-addon1')
+              span#basic-addon1.input-group-text Report Date
+              input#Reportdate.form-control(type='date' aria-label='Report Date' aria-describedby='basic-addon1')
           .col
             .input-group.mb-3
               span#basic-addon1.input-group-text Value of stolen/damage
@@ -231,35 +232,135 @@ html(lang='en')
         .row
           .col
             .input-group.mb-3
-              span#basic-addon1.input-group-text Supp. INT. & Serial #
-              input#Supp&serial.form-control(type='text' aria-label='Supp. INT. & Serial #' aria-describedby='basic-addon1')
+              span#basic-addon1.input-group-text Report Time
+              input#reporttime.form-control(type='text' aria-label='reporttime' aria-describedby='basic-addon1')
           .col
             .input-group.mb-3
-              span#basic-addon1.input-group-text Date
-              input#date.form-control(type='date' aria-label='Date' aria-describedby='basic-addon1')
+              span#basic-addon1.input-group-text Supp. INT. & Serial #
+              input#Supp&serial.form-control(type='text' aria-label='Supp. INT. & Serial #' aria-describedby='basic-addon1')
         .row.g-2
           .col-md
-            label.form-label(for='formGroupExampleInput') Code
-            .form-check
-              input#defaultCheck1.form-check-input(type='checkbox' value='')
-              label.form-check-label(for='defaultCheck1')
-                | RP
-            .form-check
-              input#defaultCheck1.form-check-input(type='checkbox' value='')
-              label.form-check-label(for='defaultCheck1')
-                | W
-            .form-check
-              input#defaultCheck1.form-check-input(type='checkbox' value='')
-              label.form-check-label(for='defaultCheck1')
-                | V
-            .form-check
-              input#defaultCheck1.form-check-input(type='checkbox' value='')
-              label.form-check-label(for='defaultCheck1')
-                | IL
-            .form-check
-              input#defaultCheck1.form-check-input(type='checkbox' value='')
-              label.form-check-label(for='defaultCheck1')
-                | S
+            table.table.table-striped.table-hover.border.border-dark
+              thead
+                tr
+                  // shows the people who are involved and can check if theyre a suspect or victim and such
+                  th(scope='col') People involved
+                  th(scope='col') Idenification code
+              tbody
+                tr
+                  th(scope='row')
+                    input.form-control.bg-transparent(type='text' placeholder='' aria-label='First name')
+                  td
+                    .form-check.form-check-inline
+                      input#inlineCheckbox1.form-check-input(type='checkbox' value='option1')
+                      label.form-check-label(for='inlineCheckbox1') RP
+                    .form-check.form-check-inline
+                      input#inlineCheckbox2.form-check-input(type='checkbox' value='option2')
+                      label.form-check-label(for='inlineCheckbox2') W
+                    .form-check.form-check-inline
+                      input#inlineCheckbox3.form-check-input(type='checkbox' value='option3')
+                      label.form-check-label(for='inlineCheckbox3') V
+                    .form-check.form-check-inline
+                      input#inlineCheckbox4.form-check-input(type='checkbox' value='option4')
+                      label.form-check-label(for='inlineCheckbox4') IL
+                    .form-check.form-check-inline
+                      input#inlineCheckbox5.form-check-input(type='checkbox' value='option5')
+                      label.form-check-label(for='inlineCheckbox5') S
+                tr
+                  th(scope='row')
+                    input.form-control.bg-transparent(type='text' placeholder='' aria-label='First name')
+                  td
+                    .form-check.form-check-inline
+                      input#inlineCheckbox1.form-check-input(type='checkbox' value='option1')
+                      label.form-check-label(for='inlineCheckbox1') RP
+                    .form-check.form-check-inline
+                      input#inlineCheckbox2.form-check-input(type='checkbox' value='option2')
+                      label.form-check-label(for='inlineCheckbox2') W
+                    .form-check.form-check-inline
+                      input#inlineCheckbox3.form-check-input(type='checkbox' value='option3')
+                      label.form-check-label(for='inlineCheckbox3') V
+                    .form-check.form-check-inline
+                      input#inlineCheckbox4.form-check-input(type='checkbox' value='option4')
+                      label.form-check-label(for='inlineCheckbox4') IL
+                    .form-check.form-check-inline
+                      input#inlineCheckbox5.form-check-input(type='checkbox' value='option5')
+                      label.form-check-label(for='inlineCheckbox5') S
+                tr
+                  th(scope='row')
+                    input.form-control.bg-transparent(type='text' placeholder='' aria-label='First name')
+                  td
+                    .form-check.form-check-inline
+                      input#inlineCheckbox1.form-check-input(type='checkbox' value='option1')
+                      label.form-check-label(for='inlineCheckbox1') RP
+                    .form-check.form-check-inline
+                      input#inlineCheckbox2.form-check-input(type='checkbox' value='option2')
+                      label.form-check-label(for='inlineCheckbox2') W
+                    .form-check.form-check-inline
+                      input#inlineCheckbox3.form-check-input(type='checkbox' value='option3')
+                      label.form-check-label(for='inlineCheckbox3') V
+                    .form-check.form-check-inline
+                      input#inlineCheckbox4.form-check-input(type='checkbox' value='option4')
+                      label.form-check-label(for='inlineCheckbox4') IL
+                    .form-check.form-check-inline
+                      input#inlineCheckbox5.form-check-input(type='checkbox' value='option5')
+                      label.form-check-label(for='inlineCheckbox5') S
+                tr
+                  th(scope='row')
+                    input.form-control.bg-transparent(type='text' placeholder='' aria-label='First name')
+                  td
+                    .form-check.form-check-inline
+                      input#inlineCheckbox1.form-check-input(type='checkbox' value='option1')
+                      label.form-check-label(for='inlineCheckbox1') RP
+                    .form-check.form-check-inline
+                      input#inlineCheckbox2.form-check-input(type='checkbox' value='option2')
+                      label.form-check-label(for='inlineCheckbox2') W
+                    .form-check.form-check-inline
+                      input#inlineCheckbox3.form-check-input(type='checkbox' value='option3')
+                      label.form-check-label(for='inlineCheckbox3') V
+                    .form-check.form-check-inline
+                      input#inlineCheckbox4.form-check-input(type='checkbox' value='option4')
+                      label.form-check-label(for='inlineCheckbox4') IL
+                    .form-check.form-check-inline
+                      input#inlineCheckbox5.form-check-input(type='checkbox' value='option5')
+                      label.form-check-label(for='inlineCheckbox5') S
+                tr
+                  th(scope='row')
+                    input.form-control.bg-transparent(type='text' placeholder='' aria-label='First name')
+                  td
+                    .form-check.form-check-inline
+                      input#inlineCheckbox1.form-check-input(type='checkbox' value='option1')
+                      label.form-check-label(for='inlineCheckbox1') RP
+                    .form-check.form-check-inline
+                      input#inlineCheckbox2.form-check-input(type='checkbox' value='option2')
+                      label.form-check-label(for='inlineCheckbox2') W
+                    .form-check.form-check-inline
+                      input#inlineCheckbox3.form-check-input(type='checkbox' value='option3')
+                      label.form-check-label(for='inlineCheckbox3') V
+                    .form-check.form-check-inline
+                      input#inlineCheckbox4.form-check-input(type='checkbox' value='option4')
+                      label.form-check-label(for='inlineCheckbox4') IL
+                    .form-check.form-check-inline
+                      input#inlineCheckbox5.form-check-input(type='checkbox' value='option5')
+                      label.form-check-label(for='inlineCheckbox5') S
+                tr
+                  th(scope='row')
+                    input.form-control.bg-transparent(type='text' placeholder='' aria-label='First name')
+                  td
+                    .form-check.form-check-inline
+                      input#inlineCheckbox1.form-check-input(type='checkbox' value='option1')
+                      label.form-check-label(for='inlineCheckbox1') RP
+                    .form-check.form-check-inline
+                      input#inlineCheckbox2.form-check-input(type='checkbox' value='option2')
+                      label.form-check-label(for='inlineCheckbox2') W
+                    .form-check.form-check-inline
+                      input#inlineCheckbox3.form-check-input(type='checkbox' value='option3')
+                      label.form-check-label(for='inlineCheckbox3') V
+                    .form-check.form-check-inline
+                      input#inlineCheckbox4.form-check-input(type='checkbox' value='option4')
+                      label.form-check-label(for='inlineCheckbox4') IL
+                    .form-check.form-check-inline
+                      input#inlineCheckbox5.form-check-input(type='checkbox' value='option5')
+                      label.form-check-label(for='inlineCheckbox5') S
           .col-md
             .form-check.form-switch
               input#flexSwitchCheckDefault.form-check-input(type='checkbox')
@@ -268,12 +369,13 @@ html(lang='en')
               input#flexSwitchCheckDefault.form-check-input(type='checkbox')
               label.form-check-label(for='flexSwitchCheckDefault') Hazard
             .form-floating
-              textarea#floatingTextarea2.form-control.overflow-auto(placeholder='Leave a comment here' style='height: 150px; min-height: 150px; max-height: 150px;')
+              textarea#floatingTextarea2.form-control.overflow-auto(placeholder='Leave a comment here' style='height: 320px; min-height: 150px; max-height: 320px;')
               label(for='floatingTextarea2') Hazard Information
         .row
           .col-25
             label(for='Narriative') Narriative
           .col-75
             textarea#addinfo(name='Narriative' placeholder='Write information...' style='height: 200px; width: 1000px; max-block-size: 200px; min-height: 200px;')
-    .row
-      a.btn.btn-primary(href='#') Submit
+      .row
+        div
+          a.btn.btn-primary(href='#' style='background-color: #F7931D;') Submit

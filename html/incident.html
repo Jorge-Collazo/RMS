@@ -47,7 +47,7 @@
                 <div class="col"><div class="input-group mb-3"><span class="input-group-text" id="basic-addon1">Occurence Time</span>
                     <input type="text" class="form-control" aria-label="Occurence Time" id="Occtime" aria-describedby="basic-addon1"></div></div>
                 <!-- <div class="col"><p><label>License Plate Number</label><input type="text" id="plate" style="margin-left: 3%;"></p></div> -->
-                <!-- <div class="col"><p><label>Year</label><input type="text" id="year"></p></div> -->
+                <!-- Can select which type of incident type -->
                 <div class="col"><div class="input-group mb-3"><label class="input-group-text" for="inputGroupSelect01">Incident Type</label>
                     <select class="form-select" id="inputGroupSelect01" style="max-height: 200px; overflow-x: hidden; overflow-y: auto;">
                       <option selected>Select</option>
@@ -92,7 +92,7 @@
             <div class="row">
                 <div class="col"><div class="input-group mb-3"><span class="input-group-text" id="basic-addon1">Social Security Number</span>
                     <input type="text" placeholder="XXX-XX-XXXX" class="form-control" aria-label="Social Security" id="ssn" aria-describedby="basic-addon1"></div></div>
-
+                    <!--Allows you to select which state the license is from-->
                 <div class="col"><div class="input-group mb-3"><label class="input-group-text" for="inputGroupSelect01">License State</label>
                     <select class="form-select" id="inputGroupSelect01">
                       <option selected>Select</option>
@@ -227,53 +227,186 @@
             </div>
 
             <div class="row">
-                <div class="col"><div class="input-group mb-3"><span class="input-group-text" id="basic-addon1">Report Date & Time</span>
-                    <input type="text" class="form-control" aria-label="Report Date & Time" id="Reportdate&time" aria-describedby="basic-addon1"></div></div>
+                <div class="col"><div class="input-group mb-3"><span class="input-group-text" id="basic-addon1">Report Date</span>
+                    <input type="date" class="form-control" aria-label="Report Date" id="Reportdate" aria-describedby="basic-addon1"></div></div>
 
                 <div class="col"><div class="input-group mb-3"><span class="input-group-text" id="basic-addon1">Value of stolen/damage</span>
                     <input type="text" class="form-control" aria-label="Value of stolen/damage" id="stolen/damage" aria-describedby="basic-addon1"></div></div>
             </div>
 
             <div class="row">
-                <div class="col"><div class="input-group mb-3"><span class="input-group-text" id="basic-addon1">Supp. INT. & Serial #</span>
-                    <input type="text" class="form-control" aria-label="Supp. INT. & Serial #" id="Supp&serial" aria-describedby="basic-addon1"></div></div>
+                <div class="col"><div class="input-group mb-3"><span class="input-group-text" id="basic-addon1">Report Time</span>
+                    <input type="text" class="form-control" aria-label="reporttime" id="reporttime" aria-describedby="basic-addon1"></div></div>
 
-                <div class="col"><div class="input-group mb-3"><span class="input-group-text" id="basic-addon1">Date</span>
-                    <input type="date" class="form-control" aria-label="Date" id="date" aria-describedby="basic-addon1"></div></div>
+                <div class="col"><div class="input-group mb-3"><span class="input-group-text" id="basic-addon1">Supp. INT. & Serial #</span>
+                  <input type="text" class="form-control" aria-label="Supp. INT. & Serial #" id="Supp&serial" aria-describedby="basic-addon1"></div></div>
             </div>
                     <div class="row g-2">
                             <div class="col-md">
-                              <label for="formGroupExampleInput" class="form-label">Code</label>
-                              <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                <label class="form-check-label" for="defaultCheck1">
-                                  RP
-                                </label>
-                              </div>
-                              <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                <label class="form-check-label" for="defaultCheck1">
-                                  W
-                                </label>
-                              </div>
-                              <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                <label class="form-check-label" for="defaultCheck1">
-                                  V
-                                </label>
-                              </div>
-                              <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                <label class="form-check-label" for="defaultCheck1">
-                                  IL
-                                </label>
-                              </div>
-                              <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                <label class="form-check-label" for="defaultCheck1">
-                                  S
-                                </label>
-                              </div>
+                              <table class="table table-striped table-hover border border-dark">
+                                <thead>
+                                  <tr>
+                                    <!--shows the people who are involved and can check if theyre a suspect or victim and such-->
+                                    <th scope="col">People involved</th>
+                                    <th scope="col">Idenification code</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <th scope="row"><input type="text" class="form-control bg-transparent" placeholder="" aria-label="First name"></th>
+                                    <td>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                        <label class="form-check-label" for="inlineCheckbox1">RP</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                        <label class="form-check-label" for="inlineCheckbox2">W</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                                        <label class="form-check-label" for="inlineCheckbox3">V</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+                                        <label class="form-check-label" for="inlineCheckbox4">IL</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
+                                        <label class="form-check-label" for="inlineCheckbox5">S</label>
+                                      </div>
+                                    </td>
+                                  </tr>
+
+                                  <tr>
+                                    <th scope="row"><input type="text" class="form-control bg-transparent" placeholder="" aria-label="First name"></th>
+                                    <td>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                        <label class="form-check-label" for="inlineCheckbox1">RP</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                        <label class="form-check-label" for="inlineCheckbox2">W</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                                        <label class="form-check-label" for="inlineCheckbox3">V</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+                                        <label class="form-check-label" for="inlineCheckbox4">IL</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
+                                        <label class="form-check-label" for="inlineCheckbox5">S</label>
+                                      </div>
+                                    </td>
+                                  </tr>
+
+                                  <tr>
+                                    <th scope="row"><input type="text" class="form-control bg-transparent" placeholder="" aria-label="First name"></th>
+                                    <td>
+                                        <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                        <label class="form-check-label" for="inlineCheckbox1">RP</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                        <label class="form-check-label" for="inlineCheckbox2">W</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                                        <label class="form-check-label" for="inlineCheckbox3">V</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+                                        <label class="form-check-label" for="inlineCheckbox4">IL</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
+                                        <label class="form-check-label" for="inlineCheckbox5">S</label>
+                                      </div>
+                                    </td>
+                                  </tr>
+
+                                  <tr>
+                                      <th scope="row"><input type="text" class="form-control bg-transparent" placeholder="" aria-label="First name"></th>
+                                      <td><div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                          <label class="form-check-label" for="inlineCheckbox1">RP</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                          <label class="form-check-label" for="inlineCheckbox2">W</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                                          <label class="form-check-label" for="inlineCheckbox3">V</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+                                          <label class="form-check-label" for="inlineCheckbox4">IL</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
+                                          <label class="form-check-label" for="inlineCheckbox5">S</label>
+                                        </div>
+                                      </td>
+                                    </tr>
+
+                                    <tr>
+                                      <th scope="row"><input type="text" class="form-control bg-transparent" placeholder="" aria-label="First name"></th>
+                                      <td><div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                          <label class="form-check-label" for="inlineCheckbox1">RP</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                          <label class="form-check-label" for="inlineCheckbox2">W</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                                          <label class="form-check-label" for="inlineCheckbox3">V</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+                                          <label class="form-check-label" for="inlineCheckbox4">IL</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
+                                          <label class="form-check-label" for="inlineCheckbox5">S</label>
+                                        </div>
+                                      </td>
+                                    </tr>
+
+                                    <tr>
+                                      <th scope="row"><input type="text" class="form-control bg-transparent" placeholder="" aria-label="First name"></th>
+                                      <td><div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                          <label class="form-check-label" for="inlineCheckbox1">RP</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                          <label class="form-check-label" for="inlineCheckbox2">W</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                                          <label class="form-check-label" for="inlineCheckbox3">V</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+                                          <label class="form-check-label" for="inlineCheckbox4">IL</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
+                                          <label class="form-check-label" for="inlineCheckbox5">S</label>
+                                        </div>
+                                      </td>
+                                    </tr>
+
+                                </tbody>
+                              </table>
                             </div>
                 
                             <div class="col-md">
@@ -287,7 +420,7 @@
                                 <label class="form-check-label" for="flexSwitchCheckDefault">Hazard</label>
                               </div>
                               <div class="form-floating">
-                                <textarea class="form-control overflow-auto" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 150px; min-height: 150px; max-height: 150px;"></textarea>
+                                <textarea class="form-control overflow-auto" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 320px; min-height: 150px; max-height: 320px;"></textarea>
                                 <label for="floatingTextarea2">Hazard Information</label>
                               </div>
                             </div>
