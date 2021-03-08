@@ -29,6 +29,10 @@ exports.people_detail = function (req, res, next) {
             Vehicle.find({ 'people': req.params.id }, 'title summary')
                 .exec(callback)
         },
+        peoples_Incident: function (callback) {
+            Incident.find({ 'people': req.params.id }, 'title summary')
+                .exec(callback)
+        },
     }, function (err, results) {
         if (err) { return next(err); } // Error in API usage.
         if (results.people == null) { // No results.
@@ -52,8 +56,19 @@ exports.people_create_post = [
     // Validate and sanitize fields.
     body('first_name').trim().isLength({ min: 1 }).escape().withMessage('First name must be specified.')
         .isAlphanumeric().withMessage('First name has non-alphanumeric characters.'),
-    body('family_name').trim().isLength({ min: 1 }).escape().withMessage('Family name must be specified.')
-        .isAlphanumeric().withMessage('Family name has non-alphanumeric characters.'),
+
+    body('middle_initial').trim().isLength({ min: 1 }).escape().withMessage('Middle initial if available.')
+        .isAlphanumeric().withMessage('Middle initial has non-alphanumeric characters.'),
+
+    body('last_name').trim().isLength({ min: 1 }).escape().withMessage('Last name must be specified.')
+        .isAlphanumeric().withMessage('Last name has non-alphanumeric characters.'),
+
+    body('social_security_number').trim().isLength({min: 9}).escape.withMessage('Social Security number must be specified')
+        .isNumber().withMessage('000000000'),
+
+    body('age').trim().isLength({min: 1}).escape().withMessage('Age name must be specified.')
+        .isNumber().withMessage('000000000'),
+    
     body('date_of_birth', 'Invalid date of birth').optional({ checkFalsy: true }).isISO8601().toDate(),
     body('date_of_death', 'Invalid date of death').optional({ checkFalsy: true }).isISO8601().toDate(),
 
