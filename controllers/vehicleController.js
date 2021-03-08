@@ -52,12 +52,25 @@ exports.vehicle_create_get = function(req, res, next) {
 exports.vehicle_create_post = [
 
     // Validate and sanitize fields.
-    body('make').trim().isLength({ min: 1 }).escape().withMessage('make must be specified.')
-        .isAlphanumeric().withMessage('First name has non-alphanumeric characters.'),
-    body('model').trim().isLength({ min: 1 }).escape().withMessage('model must be specified.')
-        .isAlphanumeric().withMessage('Family name has non-alphanumeric characters.'),
+    body('license_plate_number').trim().isLength({ min: 1 }).escape().withMessage('license plate number must be specified.'),
     body('year', 'Invalid year').require({ checkFalsy: true }).isISO8601().toDate(),
-    body('date_of_death', 'Invalid date of death').optional({ checkFalsy: true }).isISO8601().toDate(),
+    body('vehicle_id_number').trim().isLength({ min: 1 }).escape().withMessage('Vehicle ID number must be specified.'),
+    body('make').trim().isLength({ min: 1 }).escape().withMessage('make must be specified.')
+            .isAlphanumeric().withMessage('make has non-alphanumeric characters.'),
+    body('model').trim().isLength({ min: 1 }).escape().withMessage('model must be specified.')
+        .isAlphanumeric().withMessage('model has non-alphanumeric characters.'),
+
+    //COlor
+    body('value').trim().isLength({ min: 1 }).escape().withMessage('value must be specified.')
+        .isAlphanumeric().withMessage('model has non-alphanumeric characters.'),
+    body('incident_report_number').trim().isLength({ min: 1 }).escape().withMessage('incident report number must be specified.'),
+    body('incident_type').trim().isLength({ min: 1 }).escape().withMessage('incident type must be specified.'),
+    body('incident_date', 'Invalid date of death').optional({ checkFalsy: true }).isISO8601().toDate(),
+    body('registered_owner').trim().isLength({ min: 1 }).escape().withMessage('registered owner must be specified.')
+            .isAlphanumeric().withMessage('registed owner has non-alphanumeric characters.'),
+    body('previous_owners').trim().isLength({ min: 1 }).escape().withMessage('previous owners must be specified.')
+        .isAlphanumeric().withMessage('previous owners has non-alphanumeric characters.'),
+    body('additional_information').trim().isLength({ min: 1 }).escape().withMessage('Additional information can be specified.'),
 
     // Process request after validation and sanitization.
     (req, res, next) => {
