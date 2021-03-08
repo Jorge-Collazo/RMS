@@ -67,9 +67,22 @@ exports.people_create_post = [
         .isNumber().withMessage('000000000'),
 
     body('age').trim().isLength({min: 1}).escape().withMessage('Age name must be specified.')
-        .isNumber().withMessage('000000000'),
+        .isNumber().withMessage('000'),
     
     body('date_of_birth', 'Invalid date of birth').optional({ checkFalsy: true }).isISO8601().toDate(),
+
+    body('last_name').trim().isLength({ min: 1 }).escape().withMessage('')
+        .isAlphanumeric().withMessage(''),
+
+    body('last_name').trim().isLength({ min: 1 }).escape().withMessage('')
+        .isAlphanumeric().withMessage(''),
+
+    body('last_name').trim().isLength({ min: 1 }).escape().withMessage('')
+        .isAlphanumeric().withMessage(''),
+
+    body('last_name').trim().isLength({ min: 1 }).escape().withMessage('')
+        .isAlphanumeric().withMessage(''),
+
     body('date_of_death', 'Invalid date of death').optional({ checkFalsy: true }).isISO8601().toDate(),
 
     // Process request after validation and sanitization.
