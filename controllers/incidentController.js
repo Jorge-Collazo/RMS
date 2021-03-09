@@ -2,7 +2,7 @@ var persons = require('../models/incident');
 var async = require('async');
 
 
-const { body,validationResult } = require('express-validator');
+const { body, validationResult } = require('express-validator');
 
 // Display list of all vehicles
 exports.incident_list = function (req, res, next) {
@@ -43,34 +43,104 @@ exports.incident_detail = function (req, res, next) {
 };
 
 // Display Incident create form on GET.
-exports.incident_create_get = function(req, res, next) {
-    res.render('incident_form', { title: 'Create Incident'});
+exports.incident_create_get = function (req, res, next) {
+    res.render('incident_form', { title: 'Create Incident' });
 };
 
 // Handle Incident create on POST.
 exports.incident_create_post = [
 
     // Validate and sanitize fields.
-    body('first_name').trim().isLength({ min: 1 }).escape().withMessage('First name must be specified.')
+    body('occurence_time').trim().isLength({ min: 1 }).escape().withMessage('First name must be specified.')
         .isAlphanumeric().withMessage('First name has non-alphanumeric characters.'),
-    body('family_name').trim().isLength({ min: 1 }).escape().withMessage('Family name must be specified.')
+    body('occurence_date').trim().isLength({ min: 1 }).escape().withMessage('Family name must be specified.')
         .isAlphanumeric().withMessage('Family name has non-alphanumeric characters.'),
-    body('date_of_birth', 'Invalid date of birth').optional({ checkFalsy: true }).isISO8601().toDate(),
-    body('date_of_death', 'Invalid date of death').optional({ checkFalsy: true }).isISO8601().toDate(),
+    body('name').trim().isLength({ min: 1 }).escape().withMessage('First name must be specified.')
+        .isAlphanumeric().withMessage('First name has non-alphanumeric characters.'),
+    body('social_security_number').trim().isLength({ min: 9 }).escape.withMessage('Social Security number must be specified')
+        .isNumber().withMessage('000000000'),
+    body('date_of_birth').optional({ checkFalsy: true }).isISO8601().toDate(),
+    body('license_plate_state').optional({ checkFalsy: true }).isISO8601().toDate(),
+    body('officer_name').trim().isLength({ min: 1 }).escape().withMessage('First name must be specified.')
+        .isAlphanumeric().withMessage('First name has non-alphanumeric characters.'),
+    body('report_date').optional({ checkFalsy: true }).isISO8601().toDate(),
+    body('report_time').optional({ checkFalsy: true }).isISO8601().toDate(),
+    body('people_involved').optional({ checkFalsy: true }).isISO8601().toDate(),
+    body('code').optional({ checkFalsy: true }).isISO8601().toDate(),
+    body('vehicle').optional({ checkFalsy: true }).isISO8601().toDate(),
+    body('incident_type').optional({ checkFalsy: true }).isISO8601().toDate(),
+    body('location').optional({ checkFalsy: true }).isISO8601().toDate(),
+    body('license_number').optional({ checkFalsy: true }).isISO8601().toDate(),
+    body('license_state').optional({ checkFalsy: true }).isISO8601().toDate(),
+    body('license_date').optional({ checkFalsy: true }).isISO8601().toDate(),
+    body('license_plate_number').optional({ checkFalsy: true }).isISO8601().toDate(),
+    body('officer_serial_number').optional({ checkFalsy: true }).isISO8601().toDate(),
+    body('value').optional({ checkFalsy: true }).isISO8601().toDate(),
+    body('serial_number').optional({ checkFalsy: true }).isISO8601().toDate(),
+    body('gang_affiliation').optional({ checkFalsy: true }).isISO8601().toDate(),
+    body('narriative').optional({ checkFalsy: true }).isISO8601().toDate(),
+    body('hazard_information').optional({ checkFalsy: true }).isISO8601().toDate(),
+    body('hazard').optional({ checkFalsy: true }).isISO8601().toDate(),
 
     // Process request after validation and sanitization.
     (req, res, next) => {
 
         // Extract the validation errors from a request.
         const errors = validationResult(req);
-        
+
         // Create Incident object with escaped and trimmed data
         var incident = new Incident(
             {
-                first_name: req.body.first_name,
-                family_name: req.body.family_name,
+                occurence_time: req.body.occurence_time,
+
+                occurence_date: req.body.occurence_date,
+
+                name: req.body.name,
+
+                social_security_number: req.body.social_security_number,
+
                 date_of_birth: req.body.date_of_birth,
-                date_of_death: req.body.date_of_death,
+
+                license_plate_state: req.body.license_plate_state,
+
+                officer_name: req.body.officer_name,
+
+                report_date: req.body.report_date,
+
+                report_time: req.body.report_time,
+
+                people_involved: req.body.people_involved,
+
+                code: req.body.code,
+
+                vehicle: req.body.vehicle,
+
+                incident_type: req.body.incident_type,
+
+                location: req.body.location,
+
+                license_number: req.body.license_number,
+
+                license_state: req.body.license_state,
+
+                license_date: req.body.license_date,
+
+                license_plate_number: req.body.license_plate_number,
+
+                officer_serial_number: req.body.officer_serial_number,
+
+                value: req.body.value,
+
+                serial_number: req.body.serial_number,
+
+                gang_affiliation: req.body.gang_affiliation,
+
+                hazard: req.body.hazard,
+
+                hazard_information: req.body.hazard_information,
+
+                narriative: req.body.narriative,
+
             }
         );
 
