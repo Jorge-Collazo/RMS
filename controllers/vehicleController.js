@@ -81,10 +81,18 @@ exports.vehicle_create_post = [
         // Create Vehicle object with escaped and trimmed data
         var vehicle = new Vehicle(
             {
+                license_plate_number: req.body.license_plate_number,
+                year: req.body.year,
+                vehicle_id_number: req.body.vehicle_id_number,
                 make: req.body.make,
                 model: req.body.model,
-                year: req.body.year,
-                date_of_death: req.body.date_of_death,
+                color: req.body.color,
+                value: req.body.value,
+                incident_report_number: req.body.incident_report_number,
+                incident_date: req.body.incident_date,
+                registered_owner: req.body.registered_owner,
+                previous_owners: req.body.previous_owners,
+                additional_information: req.body.additional_information,
             }
         );
 
