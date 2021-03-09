@@ -63,25 +63,40 @@ exports.people_create_post = [
     body('last_name').trim().isLength({ min: 1 }).escape().withMessage('Last name must be specified.')
         .isAlphanumeric().withMessage('Last name has non-alphanumeric characters.'),
 
-    body('social_security_number').trim().isLength({min: 9}).escape.withMessage('Social Security number must be specified')
-        .isNumber().withMessage('000000000'),
+    body('social_security_number').trim().isLength({min: 9}).escape.withMessage('000000000')
+        .isNumeric().withMessage('000000000'),
 
     body('age').trim().isLength({min: 1}).escape().withMessage('Age name must be specified.')
-        .isNumber().withMessage('000'),
+        .isNumeric().withMessage('000'),
     
     body('date_of_birth', 'Invalid date of birth').optional({ checkFalsy: true }).isISO8601().toDate(),
 
-    body('last_name').trim().isLength({ min: 1 }).escape().withMessage('')
-        .isAlphanumeric().withMessage(''),
+    body('phone_number').trim().isLength({min: 1}).escape().withMessage('0000000000')
+        .isNumeric().withMessage('0000000000'),
 
-    body('last_name').trim().isLength({ min: 1 }).escape().withMessage('')
-        .isAlphanumeric().withMessage(''),
+    body('home_address').trim().isLength({ min: 1 }).escape().withMessage('Home address is required'),
 
-    body('last_name').trim().isLength({ min: 1 }).escape().withMessage('')
-        .isAlphanumeric().withMessage(''),
+    body('weight').trim().isLength({min: 1}).escape().withMessage('000')
+        .isNumeric().withMessage('000'),
 
-    body('last_name').trim().isLength({ min: 1 }).escape().withMessage('')
-        .isAlphanumeric().withMessage(''),
+    body('height').trim().isLength({min: 1}).escape().withMessage('0 00')
+        .isNumeric().withMessage('0 00'),
+
+    body('eye_color').trim().isLength({ min: 1 }).escape().withMessage('UNK')
+        .isAlphanumeric().withMessage('UNK'),
+
+    body('race').trim().isLength({ min: 1 }).escape().withMessage('U')
+        .isAlphanumeric().withMessage('U'),
+
+    body('hair_color').trim().isLength({ min: 1 }).escape().withMessage('UNK')
+        .isAlphanumeric().withMessage('UNK'),
+
+    body('gender').trim().isLength({ min: 1 }).escape().withMessage('Unknown')
+        .isAlphanumeric().withMessage('Unknown'),
+
+    body('additional_information').trim().isLength({ min: 1 }).escape().withMessage(''),
+
+    
 
     body('date_of_death', 'Invalid date of death').optional({ checkFalsy: true }).isISO8601().toDate(),
 
@@ -94,59 +109,34 @@ exports.people_create_post = [
         // Create People object with escaped and trimmed data
         var people = new People(
             {
-                first_name: { type: String, required: true, maxlength: 100 },
-
-                middle_initial:{type: String, required: false, maxlength: 2},
-
-                last_name: { type: String, required: true, maxlength: 100 },
-
-                social_security_number:{type: Number, required: true, maxlength:9, minlength:9},
-
-                age:{type: Number, required: true, maxlength:3, minlength:1},
-
-                date_of_birth: {type: Date, required: true},
-
-                phone_number: {type: Number, required: true, maxlength:9, minlength:9},
-
-                home_address: {type: String, required: true, },
-
-                weight: {type: Number, required: true, maxlength:3},
-
-                height: {type: Number, required: true, maxlength:3},
-
-                eye_color: {type: String, required: true, enum: ['UNK', 'BRO', 'GRN', 'BLU', 'DBL', 'LBL'], default: 'UNK'},
-
-                race: {type: String, required: true, enum: ['U', 'W', 'B', 'H', 'I', 'A'], default: 'U'},
-
-                hair_color: {type: String, required: true, enum: ['UNK','BGE','BLK','BLU', 'DBL', 'LBL', 'BRZ', 'BRO', 'GLD', 'GRY', 'GRN', 'MAR', 'ORG', 'PNK', 'PLE', 'RED', 'SIL', 'TAN', 'TRQ', 'WHI', 'YEL', 'TEA', 'BLN', 'HAZ', 'BLD'], default: 'UNK'},
-
-                gender: {type: String, required: true, enum: ['Unknown', 'Male', 'Female'], default: 'Unknown'},
-
-                additional_information: {type: String, required: false},
-
-                identification_code: {type: Boolean, required:false},
-
-                gang_affiliation: {type: Boolean, required:false},
-
-                hazard_identification: {type: Boolean, required:false},
-
-                hazard_information: {type: String, required: false},
-
-                license_number: {type: Number, required: true, maxlength:11},
-
-                license_date: {type: Date, required: true},
-
-                license_state: {type: String, required: true, maxlength:2, enum: ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD','TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY',], default: 'AL'},
-
-                registered_vehicle: {type: Schema.Types.ObjectId, ref: 'vehicle', required: false},
-
-                previous_vhicles: {type: Schema.Types.ObjectId, ref: 'vehicle', required: false,},
-
-                incident_report_number: {type: Schema.Types.ObjectId, ref: 'incident', required: true},
-
-                incident_type: {type: Schema.Types.ObjectId, ref: 'incident', required: true},
-
-                incident_date: {type: Schema.Types.ObjectId, ref: 'incident', required: true},
+                first_name: req.body.first_name,
+                middle_initial: req.body.middle_initial,
+                last_name: req.body.last_name,
+                social_security_number: req.body.social_security_number,
+                age: req.body.age,
+                date_of_birth: req.body.date_of_birth,
+                phone_number: req.body.phone_number,
+                home_address: req.body.home_address,
+                weight: req.body.weight,
+                height: req.body.height,
+                eye_color: req.body.eye_color,
+                race: req.body.race,
+                hair_color: req.body.hair_color,
+                gender: req.body.gender,
+                additional_information: req.body.additional_information,
+                identification_code: req.body.identification_code,
+                gang_affiliation: req.body.gang_affiliation,
+                hazard_identification: req.body.hazard_identification,
+                hazard_information: req.body.hazard_information,
+                license_number: req.body.license_number,
+                license_date: req.body.license_date,
+                license_state: req.body.license_state,
+                registered_vehicle: req.body.registered_vehicle,
+                previous_vhicles: req.body.previous_vhicles,
+                incident_report_number: req.body.incident_report_number,
+                incident_type: req.body.incident_type,
+                incident_date: req.body.incident_date,
+                _id: req.params.id
             }
         );
 
@@ -259,9 +249,32 @@ exports.people_update_post = [
         var people = new People(
             {
                 first_name: req.body.first_name,
-                family_name: req.body.family_name,
+                middle_initial: req.body.middle_initial,
+                last_name: req.body.last_name,
+                social_security_number: req.body.social_security_number,
+                age: req.body.age,
                 date_of_birth: req.body.date_of_birth,
-                date_of_death: req.body.date_of_death,
+                phone_number: req.body.phone_number,
+                home_address: req.body.home_address,
+                weight: req.body.weight,
+                height: req.body.height,
+                eye_color: req.body.eye_color,
+                race: req.body.race,
+                hair_color: req.body.hair_color,
+                gender: req.body.gender,
+                additional_information: req.body.additional_information,
+                identification_code: req.body.identification_code,
+                gang_affiliation: req.body.gang_affiliation,
+                hazard_identification: req.body.hazard_identification,
+                hazard_information: req.body.hazard_information,
+                license_number: req.body.license_number,
+                license_date: req.body.license_date,
+                license_state: req.body.license_state,
+                registered_vehicle: req.body.registered_vehicle,
+                previous_vhicles: req.body.previous_vhicles,
+                incident_report_number: req.body.incident_report_number,
+                incident_type: req.body.incident_type,
+                incident_date: req.body.incident_date,
                 _id: req.params.id
             }
         );
