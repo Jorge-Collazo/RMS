@@ -1,0 +1,17 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  title RMS
+  link(href='index.css' rel='stylesheet' type='text/css')
+  script(src='server.js')
+.loginbox
+  img.logo(src='public/images/Law Public Safety_orange.png')
+  h1 Login here
+  form
+    p Username
+    input#username(type='text' name='username' placeholder='Enter Username' onkeydown='handleEnter(event)')
+    p Password
+    input#password.validate(type='password' name='password' placeholder='Enter Password' onkeydown='handleEnter(event)')
+    input(type='button' name='' value='login' onclick='validate()')
