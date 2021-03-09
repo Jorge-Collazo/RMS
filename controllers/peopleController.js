@@ -96,7 +96,7 @@ exports.people_create_post = [
 
     body('additional_information').trim().isLength({ min: 1 }).escape().withMessage(''),
 
-    
+    body('identification_code').optional({checkFalsy:true}).is,
 
     body('date_of_death', 'Invalid date of death').optional({ checkFalsy: true }).isISO8601().toDate(),
 
