@@ -4,6 +4,7 @@ const { DateTime } = require("luxon");  //for date handling
 
 var Schema = mongoose.Schema;
 
+//creates the vehicle schema and determines the requirements for each thing 
 var VehicleSchema = new Schema(
     {
         license_plate_number: {type: Number, required: true, maxlength:11},
