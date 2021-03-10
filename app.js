@@ -4,11 +4,13 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+//routes the index 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
 
+// links the mongo database to the site
 var mongoose = require('mongoose');
 var dex_db_url = "mongodb+srv://admin:admin@rms.biz6n.mongodb.net/RMS?retryWrites=true&w=majority";
 var mongoDB = process.env.URI || dex_db_url;

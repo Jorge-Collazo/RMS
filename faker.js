@@ -4,6 +4,7 @@ var randomName = faker.name.findName(); // Rowan Nikolaus
 var randomEmail = faker.internet.email(); // Kassandra.Haley@erich.biz
 var randomCard = faker.helpers.createCard(); // random contact card containing many properties
 
+//display the random name, last name, number, city
 app.post('/',(req,res)=>{  
     for(var i=0; i<10;i++){  
       var fakke = new fakerModel({  
