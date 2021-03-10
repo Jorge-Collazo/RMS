@@ -9,7 +9,7 @@ var vehicle_controller = require('../controllers/vehicleController');
 /// incident ROUTES ///
 
 // GET catalog home page.
-router.get('/', index);
+router.get('/', incident_controller.index);
 
 // GET request for creating a incident. NOTE This must come before routes that display incident (uses id).
 router.get('/incident/create', incident_controller.incident_create_get);
