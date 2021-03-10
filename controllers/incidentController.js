@@ -6,23 +6,7 @@ const { body, validationResult } = require('express-validator');
 
 
 exports.index = function (req, res) {
-
-    async.parallel({
-        incident_count: function (callback) {
-            incident.countDocuments({}, callback); // Pass an empty object as match condition to find all documents of this collection
-        },
-        incident_available_count: function (callback) {
-            incident.countDocuments({ status: 'Available' }, callback);
-        },
-        people_count: function (callback) {
-            people.countDocuments({}, callback);
-        },
-        vehicle_count: function (callback) {
-            vehicle.countDocuments({}, callback);
-        }
-    }, function (err, results) {
-        res.render('index', { title: 'Local Library Home', error: err, data: results });
-    });
+        res.render('index');
 };
 
 // Display list of all vehicles
