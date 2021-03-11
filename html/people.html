@@ -8,6 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 </head>
 <body>
+  <!--Creates the pages navigation bar-->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html"><img src="public/images/Law Public Safety_orange.png" height="56px" width="150px"></a>
@@ -39,12 +40,18 @@
 
   <br>
 
+<!--Creates the form itself-->
+  <!--Centers the form to take up 80% of the available space-->
   <div class="mx-auto" style="width: 80%;">
+    <!--The text center class centers the text in each column-->
     <div class="card text-center">
       <h2 class="card-header mx-auto" style="width: 100%;">People</h2>
 
+      <!--Sets the form as one large row-->
       <div class="row g-2 m-3">
+        <!--Splits the row into one of two large columns-->
         <div class="col-md me-3">
+          <!--Creates divs that hold input tags, allowing the form to be filled with information-->
           <div class="input-group mb-3">
             <span class="input-group-text" id="inputGroup-sizing-default">First Name</span>
             <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
@@ -70,6 +77,7 @@
             <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
           </div>
 
+          <!--Creates a input that allows for the selection of a date-->
           <div class="input-group mb-3">
             <span class="input-group-text" id="inputGroup-sizing-default">Date of Birth</span>
             <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" min="1900-01-01" max="2021-12-31">
@@ -95,6 +103,7 @@
             <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
           </div>
 
+          <!--Creates a select that allows the user to choose from a selection of different options-->
           <div class="input-group mb-3">
             <label class="input-group-text" for="inputGroupSelect01">Eye Color</label>
             <select class="form-select" id="inputGroupSelect01">
@@ -159,6 +168,7 @@
             </select>
           </div>
 
+          <!--Creates a large textbox that allows for large explanations, and creats a scrollbar when overflowing-->
           <div class="form-floating mb-3">
             <textarea class="form-control overflow-auto" placeholder="Leave a comment here" id="floatingTextarea" style="height: 300px; min-height: 300px; max-height: 300px;"></textarea>
             <label for="floatingTextarea">Additional Information</label>
@@ -171,10 +181,14 @@
 
         </div>
 
+        <!--Splits the row into the second of two large columns-->
         <div class="col-md ms-3">
+          <!--Splits part of the second column into a seperate row containing two columns-->
           <div class="row g-2">
 
+            <!--Splits the miniature row into one of two columns-->
             <div class="col-md">
+              <!--Creates a checkbox that allows for the selection of an identification code-->
               <label for="formGroupExampleInput" class="form-label">Code</label>
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
@@ -208,7 +222,9 @@
               </div>
             </div>
 
+            <!--Splits the miniature row into one of two columns-->
             <div class="col-md">
+              <!--Creates a radio bow that can be checked on and off-->
               <div class="form-check form-switch">
                 <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
                 <label class="form-check-label" for="flexSwitchCheckDefault">Gang affiliation</label>
@@ -218,6 +234,8 @@
                 <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
                 <label class="form-check-label" for="flexSwitchCheckDefault">Hazard</label>
               </div>
+
+              <!--Creates another text box for additional information-->
               <div class="form-floating">
                 <textarea class="form-control overflow-auto" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 150px; min-height: 150px; max-height: 150px;"></textarea>
                 <label for="floatingTextarea2">Hazard Information</label>
@@ -232,6 +250,7 @@
             <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
           </div>
 
+          <!--Creates a input that allows for the selection of a date-->
           <div class="input-group mb-3">
             <span class="input-group-text" id="inputGroup-sizing-default">License Date</span>
             <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" min="1900-01-01" max="2021-12-31">
@@ -244,6 +263,7 @@
 
           <br>
 
+          <!--Creates a tabel that holds inputs within the table rows to allow users to add information-->
           <table class="table table-striped table-hover border border-dark">
               <thead>
                 <tr>
@@ -331,6 +351,7 @@
             </table>
 
         </div>
+        <!--Creates a button for submitting the form-->
         <div class="row g-2 mb-2 ml-2">
           <div>
             <button class="btn btn-primary btn-lg col-md ms-3 mx-3" type="submit" style="background-color: #F7931D;">Submit</button>
@@ -339,7 +360,8 @@
       </div>
     </div>
   </div>
-  
+
+<!--A function used to invert the colors of the page-->
 <script>
   function addDarkmodeWidget() {
     new Darkmode().showWidget();
